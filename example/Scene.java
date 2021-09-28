@@ -28,18 +28,23 @@ public class Scene {
                 new URL("file:///home/hollow/java/jw03-hollowopk/example.QuickSorter.png"));
         SteganographyClassLoader sLoader = new SteganographyClassLoader(
                 new URL("file:///home/hollow/java/jw03-hollowopk/example.SelectSorter.png"));
-
+        //SteganographyClassLoader jzxLoader = new SteganographyClassLoader(
+                //new URL("file:///home/hollow/java/jw03-hollowopk/example.JZXQuickSorter.png"));
+        
         Class b = bLoader.loadClass("example.BubbleSorter");
         Class q = qLoader.loadClass("example.QuickSorter");
         Class s = sLoader.loadClass("example.SelectSorter");
+        //Class jzx = jzxLoader.loadClass("example.QuickSorter");
         
-        //Sorter bubbleSorter = (Sorter) b.newInstance();
+        Sorter bubbleSorter = (Sorter) b.newInstance();
         Sorter quickSorter = (Sorter) q.newInstance();
         Sorter selectSorter = (Sorter) s.newInstance();
+        //Sorter jzxQuickSorter = (Sorter) jzx.newInstance();
 
         //theGeezer.setSorter(bubbleSorter);
         //theGeezer.setSorter(quickSorter);
         theGeezer.setSorter(selectSorter);
+        //theGeezer.setSorter(jzxQuickSorter);
 
         String log = theGeezer.lineUp(line);
 
